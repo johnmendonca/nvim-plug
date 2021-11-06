@@ -37,20 +37,12 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 filetype plugin indent on
 
 " set leader key
-"let g:mapleader = "\<Space>"
-
-" more subtle matching brace highlighting
-set showmatch 
-hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
-
-"colo darkblue
-hi Keyword ctermfg=darkcyan
-hi Constant ctermfg=5*
-hi Comment ctermfg=2*
-hi Normal ctermbg=none
-hi LineNr ctermfg=darkgrey
+" let g:mapleader = "\<Space>"
 
 command! W write
+command! Wqa write | quitall
+command! Q quit
+command! Qa quitall
 
 " insert mode movements ctrl-hjkl, alt-o opens new line below
 inoremap <M-o> <Esc>o
@@ -62,11 +54,6 @@ inoremap <C-l> <Right>
 
 autocmd BufEnter *.html :setlocal filetype=eruby
 autocmd BufEnter *.vue  :setlocal filetype=html
-
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set shiftwidth=4 |
-    \ set softtabstop=4
 
 " Toggle relative line numbers
 function! NumberToggle()
@@ -88,6 +75,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -107,4 +97,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 "Use Grepper
 nnoremap <leader>ga :Grepper -tool grep<cr>
 nnoremap <leader>gb :Grepper -tool grep -buffer<cr>
+
+source $HOME/.config/nvim/themes/onedark.vim
 
