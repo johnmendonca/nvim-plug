@@ -74,6 +74,10 @@ Plug 'mhinz/vim-grepper'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'urbit/hoon.vim'
+Plug 'mattn/emmet-vim'
+Plug 'godlygeek/tabular'
 
 call plug#end()
 
@@ -97,6 +101,17 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 "Use Grepper
 nnoremap <leader>ga :Grepper -tool grep<cr>
 nnoremap <leader>gb :Grepper -tool grep -buffer<cr>
+
+let g:user_emmet_leader_key='<C-F>'
+
+" Tabular
+nnoremap <leader>= :Tabularize /=<CR>
+nnoremap <leader>- :Tabularize /-><CR>
+nnoremap <leader>< :Tabularize /<-<CR>
+nnoremap <leader>, :Tabularize /,<CR>
+nnoremap <leader># :Tabularize /#-}<CR>
+nnoremap <leader>: :Tabularize /::<CR>
+nnoremap <leader>[ :Tabularize /[<CR>
 
 source $HOME/.config/nvim/themes/onedark.vim
 
