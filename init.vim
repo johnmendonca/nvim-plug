@@ -29,7 +29,6 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
-set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
@@ -51,9 +50,6 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-
-autocmd BufEnter *.html :setlocal filetype=eruby
-autocmd BufEnter *.vue  :setlocal filetype=html
 
 " Toggle relative line numbers
 function! NumberToggle()
@@ -80,6 +76,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
+
+au FileType * set fo-=c fo-=r fo-=o     " Stop newline continution of comments
+autocmd BufEnter *.html :setlocal filetype=eruby
+autocmd BufEnter *.vue  :setlocal filetype=html
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
