@@ -79,6 +79,14 @@ Plug 'urbit/hoon.vim'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 
+Plug 'SirVer/ultisnips'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+
 call plug#end()
 
 au FileType * set fo-=c fo-=r fo-=o     " Stop newline continution of comments
@@ -115,3 +123,24 @@ nnoremap <leader>[ :Tabularize /[<CR>
 
 source $HOME/.config/nvim/themes/onedark.vim
 
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+let g:asyncomplete_auto_completeopt = 0
+set completeopt=menuone,noinsert
+
+if executable('hoon-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'hoon-language-server',
+        \ 'cmd': ['hoon-language-server'],
+        \ 'whitelist': ['hoon'],
+        \ })
+endif
+
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': ['typescript-language-server --stdio'],
+        \ 'whitelist': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'typescript.tsx'],
+        \ })
+endif
