@@ -15,7 +15,6 @@ set encoding=utf-8
 set ttyfast                             " Speed up scrolling in Vim
 " From https://www.chrisatmachine.com/Neovim/02-vim-general-settings/
 set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
 set pumheight=10                        " Makes popup menu smaller
 set ruler              			            " Show the cursor row, column numbers
 set iskeyword+=-                      	" treat dash separated words as a word text object"
