@@ -108,8 +108,9 @@ let NERDTreeShowHidden=1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "Use Grepper
-nnoremap <leader>ga :Grepper -tool grep<cr>
+nnoremap <leader>ga :Grepper -tool git<cr>
 nnoremap <leader>gb :Grepper -tool grep -buffer<cr>
+nnoremap <leader>gg :Grepper -tool grep<cr>
 
 let g:user_emmet_leader_key='<C-F>'
 
