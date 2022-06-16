@@ -81,8 +81,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 Plug 'kevinoid/vim-jsonc'
+Plug 'https://git.sr.ht/~matthias_schaub/hoon-runes.vim'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 

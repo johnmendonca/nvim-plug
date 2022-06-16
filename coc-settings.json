@@ -13,5 +13,7 @@
       "initializationOptions": {},
       "settings": {}
     }
-  }
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.asdf/shims/black"
 }
