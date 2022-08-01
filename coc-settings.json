@@ -2,7 +2,7 @@
   "languageserver": {
     "hoon-language-server": {
       "command": "hoon-language-server",
-      "args": ["-p", "8080", "-s", "let", "-c", "maltem-ragryx-ravlyn-nopwyx"],
+      "args": ["-p", "8080", "-s", "nec", "-c", "ropnys-batwyd-nossyt-mapwet"],
       "filetypes": ["hoon"]
     },
     "sorbet": {
