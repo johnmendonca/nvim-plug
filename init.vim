@@ -103,6 +103,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Show hidden files in NERDTree
 let NERDTreeShowHidden=1
+"Hide a few things
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 
 "Exclude gitignore items from CtrlP search
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -145,7 +147,7 @@ hi CocMenuSel ctermbg=109 guibg=#13354A
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
 
 " Use `[g` and `]g` to navigate diagnostics
