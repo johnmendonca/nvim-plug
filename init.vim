@@ -87,6 +87,7 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --f
 Plug 'kevinoid/vim-jsonc'
 Plug 'https://git.sr.ht/~matthias_schaub/hoon-runes.vim'
 Plug 'pearofducks/ansible-vim'
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
